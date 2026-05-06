@@ -6,16 +6,26 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
     "@remotion/cli": "4.0.457",
+    "@remotion/tailwind-v4": "4.0.457",
+    "@remotion/three": "^4.0.457",
+    "d3-geo": "^3.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.457",
-    "@remotion/tailwind-v4": "4.0.457",
-    "tailwindcss": "4.0.0"
+    "tailwindcss": "4.0.0",
+    "three": "^0.184.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.457",
+    "@types/d3-geo": "^3.1.0",
     "@types/react": "19.2.7",
+    "@types/three": "^0.184.0",
+    "@types/topojson-client": "^3.1.5",
     "@types/web": "0.0.166",
     "eslint": "9.19.0",
     "prettier": "3.8.1",
