@@ -3,12 +3,12 @@ import {
   AbsoluteFill,
   Easing,
   interpolate,
+  OffthreadVideo,
   Sequence,
   spring,
   staticFile,
   useCurrentFrame,
   useVideoConfig,
-  Video,
 } from "remotion";
 
 // ── Timing (frames at 30fps) — adjust to match your source footage ──────────
@@ -47,6 +47,8 @@ type Phase = {
   filter: string;
 };
 
+// Source video is 8.58s. Each phase loops from a different entry point.
+// Replace videoStart values (in seconds) once you have a longer source video.
 const PHASES: Phase[] = [
   {
     id: "movilidad",
@@ -67,7 +69,7 @@ const PHASES: Phase[] = [
     start: CALENTAMIENTO_START,
     end: CALENTAMIENTO_END,
     accent: LIME,
-    videoStart: 30,
+    videoStart: 2,
     filter: "contrast(1.15) saturate(0.9) brightness(0.85)",
   },
   {
@@ -78,7 +80,7 @@ const PHASES: Phase[] = [
     start: ENTRENAMIENTO_START,
     end: ENTRENAMIENTO_END,
     accent: RED,
-    videoStart: 60,
+    videoStart: 4,
     filter: "contrast(1.35) saturate(1.15) brightness(0.82)",
   },
   {
@@ -89,7 +91,7 @@ const PHASES: Phase[] = [
     start: ENFRIAMIENTO_START,
     end: ENFRIAMIENTO_END,
     accent: LIME,
-    videoStart: 120,
+    videoStart: 6,
     filter: "contrast(1.05) saturate(0.75) brightness(0.9)",
   },
 ];
@@ -663,8 +665,8 @@ export const RunningVideo: React.FC = () => {
           durationInFrames={phase.end - phase.start}
         >
           <AbsoluteFill>
-            <Video
-              src={staticFile("shutt_export.mov")}
+            <OffthreadVideo
+              src={staticFile("shutt_export.mp4")}
               startFrom={phase.videoStart * fps}
               style={{
                 width: "100%",
