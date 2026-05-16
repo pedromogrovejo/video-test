@@ -8,7 +8,7 @@
   "dependencies": {
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
-    "@remotion/cli": "4.0.457",
+    "@remotion/cli": "^4.0.457",
     "@remotion/tailwind-v4": "4.0.457",
     "@remotion/three": "^4.0.457",
     "d3-geo": "^3.1.1",
