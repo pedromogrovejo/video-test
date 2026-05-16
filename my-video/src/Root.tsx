@@ -2,10 +2,19 @@ import "./index.css";
 import { Composition } from "remotion";
 import { RunningVideo } from "./RunningVideo";
 import { WorldTrip } from "./WorldTrip";
+import { SriLankaVideo, totalDuration } from "./compositions/SriLankaVideo";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="SriLanka"
+        component={SriLankaVideo}
+        durationInFrames={totalDuration}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
       <Composition
         id="RunningVideo"
         component={RunningVideo}
